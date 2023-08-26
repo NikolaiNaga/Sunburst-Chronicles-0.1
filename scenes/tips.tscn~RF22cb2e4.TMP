@@ -1,0 +1,9 @@
+prometheus_tournament4
+D 2023-08-24 00:34:45.522270 [InstallInfo] {Main} InstallInfo agent association has been changed: uid=prometheus_tournament4 agentUid=prometheus_tournament4
+D 2023-08-24 00:34:45.522279 [InstallManager] {Main} Selecting best game install data for game wow: savedUid=wow originalUid=<none> newUid=wow
+D 2023-08-24 00:34:45.522281 [InstallInfo] {Main} InstallInfo agent association has been changed: uid=wow agentUid=wow
+D 2023-08-24 00:34:45.522287 [InstallManager] {Main} Selecting best game install data for game prometheus_tournament_viewer: savedUid=prometheus_tournament_viewer originalUid=<none> newUid=prometheus_tournament_viewer
+D 2023-08-24 00:34:45.522291 [InstallInfo] {Main} InstallInfo agent association has been changed: uid=prometheus_tournament_viewer agentUid=prometheus_tournament_viewer
+D 2023-08-24 00:34:45.522301 [InstallManager] {Main} Selecting best game install data for game wow_classic: savedUid=wow_classic originalUid=<none> newUid=wow_classic
+D 2023-08-24 00:34:45.522304 [InstallInfo] {Main} InstallInfo agent association has been changed: uid=wow_classic agentUid=wow_classic
+D 2023-08-24 00:34:45.522310 [InstallManager] {Main} Selecting best game install data for game wow_classic_era: savedUid=wow_class

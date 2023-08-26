@@ -1,0 +1,12 @@
+res://scenes/tutorial.tscn
+res://Fonts/SceneFonts.tres
+res://Fonts/ManaFont.tres
+res://Fonts/ButtonTexture.tres
+res://Scripts/StartScene.gd
+res://scenes/global.tscn
+res://scenes/profile.tscn
+res://scenes/start_scene.tscn
+res://scenes/home.tscn
+res://scenes/jobs.tscn
+res://scenes/boss.tscn
+res://scenes/top_ui.tscn

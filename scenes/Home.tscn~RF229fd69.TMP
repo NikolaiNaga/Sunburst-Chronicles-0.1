@@ -1,0 +1,14 @@
+ for region 'SG' resulted in cache miss.
+I 2023-08-24 00:34:47.035151 [GSStateTracker] {Main} State changed to: Loading
+D 2023-08-24 00:34:47.035156 [GSAccountProvider] {Main} Game account list for region 'XX' resulted in cache miss.
+D 2023-08-24 00:34:47.035160 [GSAccountProvider] {Main} Game account list for region 'GLOBAL' resulted in cache miss.
+D 2023-08-24 00:34:47.035164 [GSAccountProvider] {Main} Parental control info for account (1:0:167dcb3f) resulted in cache miss.
+D 2023-08-24 00:34:47.035171 [GSAccountProvider] {Main} Received program level info. programId=OSI programLevelInfo=|program=5198665
+D 2023-08-24 00:34:47.035192 [GSAccountProvider] {Main} Received program level info. programId=Fen programLevelInfo=|program=4613486
+D 2023-08-24 00:34:47.035200 [GSAccountProvider] {Main} Received program level info. programId=D3 programLevelInfo=|program=17459
+D 2023-08-24 00:34:47.035206 [GSAccountProvider] {Main} Received program level info. programId=S2 programLevelInfo=|program=21298
+D 2023-08-24 00:34:47.035212 [GSAccountProvider] {Main} Received program level info. programId=S1 programLevelInfo=|program=21297
+D 2023-08-24 00:34:47.035217 [GSAccountProvider] {Main} Received program level info. programId=FORE programLevelInfo=|program=1179603525
+D 2023-08-24 00:34:47.035223 [GSAccountProvider] {Main} Received program level info. programId=W3 programLevelInfo=|program=22323
+D 2023-08-24 00:34:47.035229 [GSAccountProvider] {Main} Received program level info. programId=WoW programLevelInfo=|program=5730135
+D 2023-08-24 00:34:47.035235 [GSAccountProvider] {Main} Received program level info. programId=Pro programLevelInfo=|is_lifetime=1|program=5272175|licenses:|id=16332|:licenses|licenses:|id=37776|:licenses|licenses:|id=107579|:licenses|licenses:|id=459391|:license

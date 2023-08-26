@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://pxxvjgps310u"]
+
+[ext_resource type="Script" path="res://Scripts/ProfileScript.gd" id="1_8g4t6"]
+[ext_resource type="PackedScene" uid="uid://bsvkgb66c8mo8" path="res://MainScenes/scenecontrol.tscn" id="3_tccqs"]
+[ext_resource type="Texture2D" uid="uid://bq2502xkwhxrp" path="res://Images/plus-304947_1280.webp" id="4_k6nay"]
+[ext_resource type="PackedScene" uid="uid://dnspltlf2sqmr" path="res://MainScenes/background.tscn" id="4_w0vg6"]
+[ext_resource type="PackedScene" uid="uid://5dt6ff7rfdht" path="res://MainScenes/top_ui.tscn" id="5_50ppo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hvviu"]
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lvilq"]
+font_size = 80
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Profile" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_8g4t6")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 874.0
+offset_top = 1579.0
+offset_right = 1065.0
+offset_bottom = 1665.0
+text = "Profile"
+label_settings = SubResource("LabelSettings_hvviu")
+
+[node name="PlayerNameLabel" type="Label" parent="Node2D"]
+offset_left = 516.0
+offset_top = 263.0
+offset_right = 1068.0
+offset_bottom = 376.0
+text = "PLAYER NAME"
+label_settings = SubResource("LabelSettings_lvilq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProfileLabel" type="RichTextLabel" parent="Node2D"]
+offset_left = 98.0
+offset_top = 277.0
+offset_right = 706.0
+offset_bottom = 1439.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 46
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+scroll_active = false
+
+[node name="AddStrength" type="Button" parent="Node2D"]
+custom_minimum_size = Vector2(62, 55)
+offset_left = 23.0
+offset_top = 944.0
+offset_right = 85.0
+offset_bottom = 999.0
+icon = ExtResource("4_k6nay")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AddBulwark" type="Button" parent="Node2D"]
+custom_minimum_size = Vector2(62, 55)
+offset_left = 23.0
+offset_top = 873.0
+offset_right = 85.0
+offset_bottom = 928.0
+icon = ExtResource("4_k6nay")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AddMana" type="Button" parent="Node2D"]
+custom_minimum_size = Vector2(62, 55)
+offset_left = 23.0
+offset_top = 677.0
+offset_right = 85.0
+offset_bottom = 732.0
+icon = ExtResource("4_k6nay")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AddFortitude" type="Button" parent="Node2D"]
+custom_minimum_size = Vector2(62, 55)
+offset_left = 22.0
+offset_top = 747.0
+offset_right = 84.0
+offset_bottom = 802.0
+icon = ExtResource("4_k6nay")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SceneControl" parent="Node2D" instance=ExtResource("3_tccqs")]
+
+[node name="Background" parent="Node2D" instance=ExtResource("4_w0vg6")]
+layer = 0
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("5_50ppo")]

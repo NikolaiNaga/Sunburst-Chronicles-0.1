@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://fbdjejlw1u8d"]
+
+[ext_resource type="Script" path="res://Scripts/home.gd" id="1_sh7ra"]
+[ext_resource type="PackedScene" uid="uid://dnspltlf2sqmr" path="res://MainScenes/background.tscn" id="3_4lbs7"]
+[ext_resource type="PackedScene" uid="uid://5dt6ff7rfdht" path="res://MainScenes/top_ui.tscn" id="4_t6u6e"]
+[ext_resource type="LabelSettings" uid="uid://d1l4pc0q0c0gi" path="res://Fonts/FontForScenes.tres" id="5_s68l4"]
+[ext_resource type="PackedScene" uid="uid://bsvkgb66c8mo8" path="res://MainScenes/scenecontrol.tscn" id="10_4xv3q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_miytm"]
+bg_color = Color(0.368627, 0.678431, 0.462745, 1)
+
+[node name="Home" type="CanvasLayer"]
+
+[node name="Node2d" type="Node2D" parent="."]
+script = ExtResource("1_sh7ra")
+
+[node name="HomeText" type="Label" parent="Node2d"]
+offset_left = 638.0
+offset_top = 1510.0
+offset_right = 1068.0
+offset_bottom = 1662.0
+text = "Home"
+label_settings = ExtResource("5_s68l4")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="GoHomeButton" type="Button" parent="Node2d"]
+offset_left = 585.0
+offset_top = 303.0
+offset_right = 1038.0
+offset_bottom = 456.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_miytm")
+text = "CLICK FOR TIPS!"
+
+[node name="SceneControl" parent="Node2d" instance=ExtResource("10_4xv3q")]
+
+[node name="TopUI" parent="Node2d" instance=ExtResource("4_t6u6e")]
+
+[node name="Background" parent="Node2d" instance=ExtResource("3_4lbs7")]
+layer = 0
+
+[connection signal="pressed" from="Node2d/GoHomeButton" to="Node2d" method="_on_go_home_button_pressed"]

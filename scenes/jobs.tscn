@@ -1,0 +1,312 @@
+[gd_scene load_steps=14 format=3 uid="uid://distkp5hdov6b"]
+
+[ext_resource type="Script" path="res://Scripts/jobscript.gd" id="1_47g53"]
+[ext_resource type="PackedScene" uid="uid://gmja4o6gyaqu" path="res://scenes/background.tscn" id="1_f7kfh"]
+[ext_resource type="PackedScene" uid="uid://bpb2wmtc7jiq3" path="res://scenes/scene_control.tscn" id="2_u4y1o"]
+[ext_resource type="PackedScene" uid="uid://bbuhpgpvr4x5e" path="res://scenes/top_ui.tscn" id="3_h1gnv"]
+[ext_resource type="Script" path="res://Scripts/JobZone1.gd" id="7_4und6"]
+[ext_resource type="Texture2D" uid="uid://b7vsxs5tesa0u" path="res://Images/1673620.png" id="7_mg3q1"]
+[ext_resource type="Texture2D" uid="uid://x0n73s2vi4oe" path="res://Images/left.png" id="8_a03oj"]
+[ext_resource type="Texture2D" uid="uid://cxwdy58iesp01" path="res://Images/JobZoneImages/Map1.god.størrelse.png" id="8_qy51v"]
+[ext_resource type="Texture2D" uid="uid://blpaatlnnxt1e" path="res://Images/Job1.png" id="9_khwav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ral0"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.756863, 0.541176, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2aom"]
+bg_color = Color(0.207843, 0.607843, 0.239216, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.756863, 0.541176, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igef5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iycxf"]
+size = Vector2(4202.04, 1404.03)
+
+[node name="jobs" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(-7, 0)
+script = ExtResource("1_47g53")
+
+[node name="Background" parent="Node2D" instance=ExtResource("1_f7kfh")]
+layer = 0
+
+[node name="SceneControl" parent="Node2D" instance=ExtResource("2_u4y1o")]
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("3_h1gnv")]
+
+[node name="JobButtons" type="Node2D" parent="Node2D"]
+
+[node name="JobZone1open" type="Button" parent="Node2D/JobButtons"]
+offset_left = 35.0
+offset_top = 506.0
+offset_right = 649.0
+offset_bottom = 629.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 70
+text = "ZONE 1"
+icon = ExtResource("8_qy51v")
+flat = true
+expand_icon = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/JobButtons"]
+offset_left = 17.0
+offset_top = 299.0
+offset_right = 1085.0
+offset_bottom = 430.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "[center][b] JOB ZONES [/b]"
+
+[node name="Job2" type="Node2D" parent="Node2D"]
+visible = false
+position = Vector2(14, 0)
+
+[node name="Job2sprite" type="Sprite2D" parent="Node2D/Job2"]
+position = Vector2(547, 1034)
+scale = Vector2(0.786469, 0.809763)
+texture = ExtResource("9_khwav")
+
+[node name="close2" type="Button" parent="Node2D/Job2"]
+offset_left = 234.0
+offset_top = 1285.0
+offset_right = 375.0
+offset_bottom = 1356.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ral0")
+text = "CLOSE"
+
+[node name="doJob2" type="Button" parent="Node2D/Job2"]
+offset_left = 642.0
+offset_top = 1252.0
+offset_right = 859.0
+offset_bottom = 1359.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_n2aom")
+text = "DO JOB"
+
+[node name="Job2TextLabel1" type="RichTextLabel" parent="Node2D/Job2"]
+offset_left = 181.0
+offset_top = 699.0
+offset_right = 917.0
+offset_bottom = 796.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 70
+bbcode_enabled = true
+text = "[center] [b] JOB 2 [/b]"
+scroll_active = false
+
+[node name="Job2TextLabel2" type="RichTextLabel" parent="Node2D/Job2"]
+offset_left = 175.0
+offset_top = 840.0
+offset_right = 917.0
+offset_bottom = 1234.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 70
+bbcode_enabled = true
+text = "[center] [b] Consumes 5 [color=2980b9]Mana [/color] [/b] [center]
+GAIN 3 EXP & 2 GOLD
+
+[left] [color=#FF0000] Requires Level: [/color]1"
+scroll_active = false
+
+[node name="Job1" type="Node2D" parent="Node2D"]
+visible = false
+position = Vector2(7, 0)
+
+[node name="Job1sprite" type="Sprite2D" parent="Node2D/Job1"]
+position = Vector2(547, 1034)
+scale = Vector2(0.786469, 0.809763)
+texture = ExtResource("9_khwav")
+
+[node name="close1" type="Button" parent="Node2D/Job1"]
+offset_left = 234.0
+offset_top = 1285.0
+offset_right = 375.0
+offset_bottom = 1356.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ral0")
+text = "CLOSE"
+
+[node name="doJob1" type="Button" parent="Node2D/Job1"]
+offset_left = 642.0
+offset_top = 1252.0
+offset_right = 859.0
+offset_bottom = 1359.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_n2aom")
+text = "DO JOB"
+
+[node name="Job1TextLabel1" type="RichTextLabel" parent="Node2D/Job1"]
+offset_left = 181.0
+offset_top = 699.0
+offset_right = 917.0
+offset_bottom = 796.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 70
+bbcode_enabled = true
+text = "[center] [b] JOB 1 [/b]"
+scroll_active = false
+
+[node name="Job1TextLabel2" type="RichTextLabel" parent="Node2D/Job1"]
+offset_left = 175.0
+offset_top = 840.0
+offset_right = 917.0
+offset_bottom = 1234.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 70
+bbcode_enabled = true
+text = "[center] [b] Consumes 3 [color=2980b9]Mana [/color] [/b] [center]
+GAIN 2 EXP & 1 GOLD
+
+[left] [color=#FF0000] Requires Level: [/color]1"
+scroll_active = false
+
+[node name="Return" type="Button" parent="Node2D"]
+visible = false
+offset_left = 19.0
+offset_top = 1547.0
+offset_right = 145.0
+offset_bottom = 1667.0
+icon = ExtResource("8_a03oj")
+flat = true
+expand_icon = true
+
+[node name="JobZone1" type="Node2D" parent="."]
+visible = false
+script = ExtResource("7_4und6")
+
+[node name="Sprite2D" type="Sprite2D" parent="JobZone1"]
+position = Vector2(5, 270)
+texture = ExtResource("8_qy51v")
+centered = false
+
+[node name="ManaJob1" type="Button" parent="JobZone1/Sprite2D"]
+offset_left = 414.0
+offset_top = 452.0
+offset_right = 657.0
+offset_bottom = 638.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igef5")
+text = "Job 1"
+icon = ExtResource("7_mg3q1")
+flat = true
+expand_icon = true
+
+[node name="ManaJob2" type="Button" parent="JobZone1/Sprite2D"]
+offset_left = 774.0
+offset_top = 960.0
+offset_right = 1026.0
+offset_bottom = 1198.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Job 2"
+icon = ExtResource("7_mg3q1")
+flat = true
+expand_icon = true
+
+[node name="ManaJob3" type="Button" parent="JobZone1/Sprite2D"]
+offset_left = 3633.0
+offset_top = 434.0
+offset_right = 3885.0
+offset_bottom = 672.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Job 5"
+icon = ExtResource("7_mg3q1")
+flat = true
+expand_icon = true
+
+[node name="ManaJob4" type="Button" parent="JobZone1/Sprite2D"]
+offset_left = 1429.0
+offset_top = 334.0
+offset_right = 1681.0
+offset_bottom = 572.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Job 3"
+icon = ExtResource("7_mg3q1")
+flat = true
+expand_icon = true
+
+[node name="ManaJob5" type="Button" parent="JobZone1/Sprite2D"]
+offset_left = 2865.0
+offset_top = 1051.0
+offset_right = 3117.0
+offset_bottom = 1289.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Job 4"
+icon = ExtResource("7_mg3q1")
+flat = true
+expand_icon = true
+
+[node name="Information" type="RichTextLabel" parent="JobZone1/Sprite2D"]
+offset_left = 26.0
+offset_top = 37.0
+offset_right = 917.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[b] Tip! [/b] Drag zone to reveal more jobs"
+scroll_active = false
+
+[node name="Area2D" type="Area2D" parent="JobZone1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JobZone1/Area2D"]
+position = Vector2(2101, 962)
+shape = SubResource("RectangleShape2D_iycxf")
+
+[connection signal="pressed" from="Node2D/JobButtons/JobZone1open" to="Node2D" method="_on_job_zone_1_open_pressed"]
+[connection signal="pressed" from="Node2D/Job2/close2" to="Node2D" method="_on_close_2_pressed"]
+[connection signal="pressed" from="Node2D/Job2/doJob2" to="Node2D" method="_on_do_job_2_pressed"]
+[connection signal="pressed" from="Node2D/Job1/close1" to="Node2D" method="_on_close_1_pressed"]
+[connection signal="pressed" from="Node2D/Job1/doJob1" to="Node2D" method="_on_do_job_1_pressed"]
+[connection signal="pressed" from="Node2D/Return" to="JobZone1" method="_on_return_pressed"]
+[connection signal="pressed" from="JobZone1/Sprite2D/ManaJob1" to="Node2D" method="_on_mana_job_1_pressed"]
+[connection signal="pressed" from="JobZone1/Sprite2D/ManaJob2" to="Node2D" method="_on_mana_job_2_pressed"]
+[connection signal="input_event" from="JobZone1/Area2D" to="JobZone1" method="_on_area_2d_input_event"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://dsvc1ga4f64lo"]
+
+[ext_resource type="Script" path="res://Scripts/jobs.gd" id="1_ppreg"]
+[ext_resource type="LabelSettings" uid="uid://ck4i3trih6ac5" path="res://Fonts/ManaText.tres" id="3_cvwp5"]
+[ext_resource type="PackedScene" uid="uid://5dt6ff7rfdht" path="res://MainScenes/top_ui.tscn" id="4_1qa2d"]
+[ext_resource type="LabelSettings" uid="uid://b284fousxtslh" path="res://Fonts/FortitudeFont.tres" id="4_gtu03"]
+[ext_resource type="PackedScene" uid="uid://dnspltlf2sqmr" path="res://MainScenes/background.tscn" id="5_8ra31"]
+[ext_resource type="PackedScene" uid="uid://bsvkgb66c8mo8" path="res://MainScenes/scenecontrol.tscn" id="6_6agp3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7371"]
+bg_color = Color(0.235294, 0.639216, 0.882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35iwc"]
+bg_color = Color(0.603922, 0.74902, 0.996078, 1)
+
+[sub_resource type="Theme" id="Theme_chhgp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrjo8"]
+bg_color = Color(0.713726, 0.572549, 0.392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywnfb"]
+bg_color = Color(0.807843, 0.717647, 0.486275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yxcgd"]
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Jobs" type="CanvasLayer"]
+metadata/_edit_horizontal_guides_ = [307.0]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_ppreg")
+
+[node name="ManaUse" type="Button" parent="Node2D"]
+top_level = true
+offset_left = 54.0
+offset_top = 389.0
+offset_right = 274.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0941176, 0.439216, 0.560784, 1)
+theme_override_colors/font_hover_color = Color(0.145098, 0.588235, 0.745098, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_k7371")
+theme_override_styles/hover = SubResource("StyleBoxFlat_35iwc")
+
+[node name="FortitudeUse" type="Button" parent="Node2D"]
+top_level = true
+offset_left = 38.0
+offset_top = 1230.0
+offset_right = 272.0
+offset_bottom = 1368.0
+theme = SubResource("Theme_chhgp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.603922, 0.27451, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.603922, 0.27451, 0.129412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.603922, 0.27451, 0.129412, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jrjo8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ywnfb")
+
+[node name="Jobs" type="Label" parent="Node2D"]
+top_level = true
+offset_left = 908.0
+offset_top = 1580.0
+offset_right = 1041.0
+offset_bottom = 1666.0
+text = "Jobs"
+label_settings = SubResource("LabelSettings_yxcgd")
+
+[node name="ManaJobs" type="Label" parent="Node2D"]
+offset_left = 3.0
+offset_top = 274.0
+offset_right = 1079.0
+offset_bottom = 366.0
+text = "Mana Jobs"
+label_settings = ExtResource("3_cvwp5")
+horizontal_alignment = 1
+
+[node name="FortitudeJobs" type="Label" parent="Node2D"]
+offset_left = 1.0
+offset_top = 1050.0
+offset_right = 1073.0
+offset_bottom = 1231.0
+text = "Fortitude Jobs"
+label_settings = ExtResource("4_gtu03")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("4_1qa2d")]
+
+[node name="Background" parent="Node2D" instance=ExtResource("5_8ra31")]
+layer = 0
+
+[node name="Control" parent="Node2D" instance=ExtResource("6_6agp3")]

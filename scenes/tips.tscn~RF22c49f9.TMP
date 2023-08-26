@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://3rn8e5brhqwv"]
+
+[ext_resource type="Script" path="res://Scripts/tips.gd" id="1_ww48s"]
+[ext_resource type="PackedScene" uid="uid://dnspltlf2sqmr" path="res://MainScenes/background.tscn" id="2_cmtl0"]
+[ext_resource type="PackedScene" uid="uid://bsvkgb66c8mo8" path="res://MainScenes/scenecontrol.tscn" id="3_cx11n"]
+[ext_resource type="PackedScene" uid="uid://5dt6ff7rfdht" path="res://MainScenes/top_ui.tscn" id="4_qfic3"]
+
+[node name="Tips" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_ww48s")
+
+[node name="Tips" type="RichTextLabel" parent="Node2D"]
+offset_left = 29.0
+offset_top = 277.0
+offset_right = 1063.0
+offset_bottom = 1657.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 46
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Background" parent="Node2D" instance=ExtResource("2_cmtl0")]
+layer = 0
+
+[node name="SceneControl" parent="Node2D" instance=ExtResource("3_cx11n")]
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("4_qfic3")]

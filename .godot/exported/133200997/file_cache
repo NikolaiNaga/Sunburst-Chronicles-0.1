@@ -1,0 +1,16 @@
+res://Fonts/Basic.tres::44f285174a02d926d536306591b16cdf::1692974271::res://.godot/exported/133200997/export-850d36b1f05b84706275da3cb48bf8da-Basic.res
+res://Fonts/ManaFont.tres::7e2debb1c77ff70a0765571d0eff0952::1693003089::res://.godot/exported/133200997/export-5282f262c09bc9d8fd40d0ab762530c5-ManaFont.res
+res://Fonts/SceneFonts.tres::480f0f215ada7f5426ae983a8c64c320::1693003089::res://.godot/exported/133200997/export-a504c101a3165cd4d4ca945d01ea7035-SceneFonts.res
+res://scenes/achievements.tscn::dbcd4ab1990fb57416f42403456faf56::1693002882::res://.godot/exported/133200997/export-06bc2023a49f06067da519e3458775da-achievements.scn
+res://scenes/background.tscn::ad731ef28156b6b18c131c4ecc958a44::1692841060::res://.godot/exported/133200997/export-f1e46807209045e58980fb2be1ec694d-background.scn
+res://scenes/boss.tscn::105e7f00085804cb0b483eaf6ee207c8::1693010422::res://.godot/exported/133200997/export-7649a76be24b0454ff92379a9b1bf3ce-boss.scn
+res://scenes/global.tscn::2b60f5a4e3e739f9fc6868f56b81d831::1693010422::res://.godot/exported/133200997/export-c49e1122a5a97eb09526f8c4b4de4935-global.scn
+res://scenes/home.tscn::5526136bac2b14178d3026b68a9a9f29::1693010422::res://.godot/exported/133200997/export-faa7347222d3a64766e63b75d2ad9c6a-home.scn
+res://scenes/jobs.tscn::73e89a38b5d821f7908c7be15840381a::1693010422::res://.godot/exported/133200997/export-215c5485bfe13b476794a1fd5986024a-jobs.scn
+res://scenes/profile.tscn::3cc9568fa0d6e2155e015e03a3bb99a0::1693010422::res://.godot/exported/133200997/export-6d7687942d9a3fc039853f10d10deb7f-profile.scn
+res://scenes/scene_control.tscn::c76c0acdbbe55d92b17dd21d6eba4ffe::1693007633::res://.godot/exported/133200997/export-ac95acdc2b62099c2bd203b7bd5ed1ca-scene_control.scn
+res://scenes/shop.tscn::ddbfe77d4dc74ab5ae05d6851c8bcf53::1693002882::res://.godot/exported/133200997/export-4b603ba22abe1ca4e7b53e2c2e7d249e-shop.scn
+res://scenes/start_scene.tscn::1d18ceeb6e59036b645d6db45921b701::1693010422::res://.godot/exported/133200997/export-417a175ccf600cb30b1cb6a0cc8992df-start_scene.scn
+res://scenes/top_ui.tscn::0da6e2c6608525f82fb72753635037a7::1693010422::res://.godot/exported/133200997/export-20c15e61dfc8a33350c8b0423ba90b62-top_ui.scn
+res://Fonts/ButtonTexture.tres::2751574735c4d3c6632c1211e95d4057::1693003642::res://.godot/exported/133200997/export-ec2a258e1f611ab01f2135a9db6b3f4f-ButtonTexture.res
+res://scenes/tutorial.tscn::7232ec86f2a5b35e75c1f969fac5dd9e::1693010422::res://.godot/exported/133200997/export-42ce494387c984238fc1312df9601261-tutorial.scn

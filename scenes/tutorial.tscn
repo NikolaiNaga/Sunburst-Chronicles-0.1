@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxpahjar2cds0"]
+
+[ext_resource type="PackedScene" uid="uid://gmja4o6gyaqu" path="res://scenes/background.tscn" id="1_6klwe"]
+[ext_resource type="Script" path="res://Scripts/HowToPlay.gd" id="1_v3nuo"]
+[ext_resource type="PackedScene" uid="uid://bpb2wmtc7jiq3" path="res://scenes/scene_control.tscn" id="2_jplgi"]
+[ext_resource type="PackedScene" uid="uid://bbuhpgpvr4x5e" path="res://scenes/top_ui.tscn" id="3_7x574"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efj3r"]
+bg_color = Color(0.294118, 0.607843, 0.968627, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_v3nuo")
+
+[node name="Background" parent="Node2D" instance=ExtResource("1_6klwe")]
+layer = 0
+
+[node name="SceneControl" parent="Node2D" instance=ExtResource("2_jplgi")]
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("3_7x574")]
+
+[node name="HowToJob" type="RichTextLabel" parent="Node2D"]
+offset_left = 97.0
+offset_top = 413.0
+offset_right = 1008.0
+offset_bottom = 1504.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+scroll_active = false
+
+[node name="HowToBoss" type="RichTextLabel" parent="Node2D"]
+visible = false
+offset_left = 60.0
+offset_top = 416.0
+offset_right = 1012.0
+offset_bottom = 1551.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+scroll_active = false
+
+[node name="HowToLevel" type="RichTextLabel" parent="Node2D"]
+visible = false
+offset_left = 97.0
+offset_top = 413.0
+offset_right = 1008.0
+offset_bottom = 1504.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Button" type="Button" parent="Node2D/HowToLevel"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 959.0
+offset_right = 643.0
+offset_bottom = 1085.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_efj3r")
+text = " I UNDERSTAND "
+expand_icon = true
+
+[connection signal="pressed" from="Node2D/HowToLevel/Button" to="Node2D" method="_on_button_pressed"]

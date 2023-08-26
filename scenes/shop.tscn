@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvlvgoskmgxis"]
+
+[ext_resource type="Script" path="res://Scripts/achievementsscript.gd" id="1_fkov8"]
+[ext_resource type="PackedScene" uid="uid://gmja4o6gyaqu" path="res://scenes/background.tscn" id="1_fvxw3"]
+[ext_resource type="PackedScene" uid="uid://bpb2wmtc7jiq3" path="res://scenes/scene_control.tscn" id="2_fdwh3"]
+[ext_resource type="PackedScene" uid="uid://bbuhpgpvr4x5e" path="res://scenes/top_ui.tscn" id="3_78kkv"]
+
+[node name="Shop" type="CanvasLayer"]
+layer = 0
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_fkov8")
+
+[node name="Background" parent="Node2D" instance=ExtResource("1_fvxw3")]
+layer = 0
+
+[node name="SceneControl" parent="Node2D" instance=ExtResource("2_fdwh3")]
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("3_78kkv")]

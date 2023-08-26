@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://qbd18flwv1pi"]
+
+[ext_resource type="Script" path="res://Scripts/bossscript.gd" id="1_jgt6o"]
+[ext_resource type="Texture2D" uid="uid://b82xfj8aq3yxd" path="res://Images/MyMonsterAvatar.png" id="2_ngk78"]
+[ext_resource type="PackedScene" uid="uid://gmja4o6gyaqu" path="res://scenes/background.tscn" id="3_22wfd"]
+[ext_resource type="PackedScene" uid="uid://bpb2wmtc7jiq3" path="res://scenes/scene_control.tscn" id="4_fyjyh"]
+[ext_resource type="PackedScene" uid="uid://bbuhpgpvr4x5e" path="res://scenes/top_ui.tscn" id="5_t3e60"]
+
+[node name="Boss" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_jgt6o")
+
+[node name="Boss" type="Button" parent="Node2D"]
+offset_left = 6.0
+offset_top = 680.0
+offset_right = 1072.0
+offset_bottom = 1672.0
+icon = ExtResource("2_ngk78")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BossDetails" type="RichTextLabel" parent="Node2D"]
+offset_left = 20.0
+offset_top = 277.0
+offset_right = 686.0
+offset_bottom = 685.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Background" parent="Node2D" instance=ExtResource("3_22wfd")]
+layer = 0
+
+[node name="SceneControl" parent="Node2D" instance=ExtResource("4_fyjyh")]
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("5_t3e60")]
+
+[node name="AttackDetails" type="RichTextLabel" parent="Node2D"]
+offset_left = 612.0
+offset_top = 277.0
+offset_right = 1057.0
+offset_bottom = 683.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+scroll_active = false
+
+[connection signal="pressed" from="Node2D/Boss" to="Node2D" method="_on_boss_pressed"]

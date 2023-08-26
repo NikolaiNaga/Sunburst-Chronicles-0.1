@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://fbdjejlw1u8d"]
+
+[ext_resource type="PackedScene" uid="uid://gmja4o6gyaqu" path="res://scenes/background.tscn" id="1_6k0ss"]
+[ext_resource type="Script" path="res://Scripts/homescript.gd" id="1_rmtaw"]
+[ext_resource type="StyleBox" uid="uid://md3lejxk40l2" path="res://Fonts/ButtonTexture.tres" id="2_al5cp"]
+[ext_resource type="PackedScene" uid="uid://bbuhpgpvr4x5e" path="res://scenes/top_ui.tscn" id="2_shi2a"]
+[ext_resource type="PackedScene" uid="uid://bpb2wmtc7jiq3" path="res://scenes/scene_control.tscn" id="3_l48d4"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_rmtaw")
+
+[node name="HowToPlay" type="Button" parent="Node2D"]
+offset_left = 688.0
+offset_top = 1505.0
+offset_right = 1061.0
+offset_bottom = 1644.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = ExtResource("2_al5cp")
+theme_override_styles/hover = ExtResource("2_al5cp")
+text = "How to play!"
+
+[node name="Background" parent="Node2D" instance=ExtResource("1_6k0ss")]
+layer = 0
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("2_shi2a")]
+
+[node name="SceneControl" parent="Node2D" instance=ExtResource("3_l48d4")]
+
+[connection signal="pressed" from="Node2D/HowToPlay" to="Node2D" method="_on_how_to_play_pressed"]

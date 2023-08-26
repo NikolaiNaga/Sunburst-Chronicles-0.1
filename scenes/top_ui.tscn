@@ -1,0 +1,133 @@
+[gd_scene load_steps=12 format=3 uid="uid://bbuhpgpvr4x5e"]
+
+[ext_resource type="Script" path="res://Scripts/TopUIscript.gd" id="1_cbgum"]
+[ext_resource type="Texture2D" uid="uid://bv3qvnwvv3pt0" path="res://Images/5966507.png" id="2_7bhgh"]
+[ext_resource type="LabelSettings" uid="uid://ixyfpnhdhxbu" path="res://Fonts/ManaFont.tres" id="2_fvcje"]
+[ext_resource type="Texture2D" uid="uid://cv0k6ags7pyrt" path="res://Images/26_-Fortitude-_symbols_sign_symbolism-512.webp" id="3_a0nhx"]
+[ext_resource type="Texture2D" uid="uid://blrpc2w1m261p" path="res://Images/1205647.png" id="5_8nj4e"]
+[ext_resource type="Texture2D" uid="uid://bi3jm6atpadh1" path="res://Images/Empty-Gold-Coin-Transparent.png" id="6_pw3un"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ony35"]
+font_size = 65
+font_color = Color(0.529412, 0.211765, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mghhg"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pxhv1"]
+font_size = 44
+font_color = Color(0.843137, 0.505882, 0.156863, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2q1x"]
+font_size = 60
+font_color = Color(1, 0.843137, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f8cnh"]
+font_size = 60
+font_color = Color(0.952941, 0.611765, 0.0705882, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TopUI" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_cbgum")
+
+[node name="ManaLabel" type="Label" parent="Node2D"]
+offset_left = 438.0
+offset_top = 20.0
+offset_right = 778.0
+offset_bottom = 134.0
+text = "MANA"
+label_settings = ExtResource("2_fvcje")
+vertical_alignment = 1
+
+[node name="FortitudeLabel" type="Label" parent="Node2D"]
+offset_left = 438.0
+offset_top = 146.0
+offset_right = 803.0
+offset_bottom = 255.0
+text = "FORTITUDE"
+label_settings = SubResource("LabelSettings_ony35")
+vertical_alignment = 1
+
+[node name="ManaIcon" type="Button" parent="Node2D"]
+offset_left = 303.0
+offset_top = 1.0
+offset_right = 435.0
+offset_bottom = 129.0
+icon = ExtResource("2_7bhgh")
+flat = true
+expand_icon = true
+
+[node name="FortitudeIcon" type="Button" parent="Node2D"]
+offset_left = 298.0
+offset_top = 136.0
+offset_right = 421.0
+offset_bottom = 258.0
+icon = ExtResource("3_a0nhx")
+flat = true
+expand_icon = true
+
+[node name="LevelLabel" type="Label" parent="Node2D"]
+offset_left = 808.0
+offset_top = 18.0
+offset_right = 918.0
+offset_bottom = 90.0
+text = "LVL:"
+label_settings = SubResource("LabelSettings_mghhg")
+
+[node name="ExperienceTracker" type="Label" parent="Node2D"]
+z_index = 1
+offset_left = 812.0
+offset_top = 86.0
+offset_right = 1082.0
+offset_bottom = 187.0
+text = "EXPERIENCE"
+label_settings = SubResource("LabelSettings_pxhv1")
+vertical_alignment = 1
+
+[node name="TotalGoldLabel" type="Label" parent="Node2D"]
+offset_left = 890.0
+offset_top = 180.0
+offset_right = 1106.0
+offset_bottom = 266.0
+text = "TEST"
+label_settings = SubResource("LabelSettings_o2q1x")
+vertical_alignment = 1
+
+[node name="CurrentLevelLabel" type="Label" parent="Node2D"]
+offset_left = 918.0
+offset_top = 10.0
+offset_right = 1074.0
+offset_bottom = 96.0
+text = "TEST"
+label_settings = SubResource("LabelSettings_f8cnh")
+vertical_alignment = 1
+
+[node name="Wizard" type="TextureRect" parent="Node2D"]
+offset_left = 23.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 266.0
+texture = ExtResource("5_8nj4e")
+expand_mode = 1
+
+[node name="GoldIcon" type="TextureRect" parent="Node2D"]
+offset_left = 796.0
+offset_top = 187.0
+offset_right = 892.0
+offset_bottom = 262.0
+texture = ExtResource("6_pw3un")
+expand_mode = 1
+
+[connection signal="pressed" from="Node2D/ManaIcon" to="Node2D" method="_on_mana_icon_pressed"]
+[connection signal="pressed" from="Node2D/FortitudeIcon" to="Node2D" method="_on_fortitude_icon_pressed"]

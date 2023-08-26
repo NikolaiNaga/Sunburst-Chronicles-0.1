@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://distkp5hdov6b"]
+
+[ext_resource type="Script" path="res://Scripts/jobscript.gd" id="1_47g53"]
+[ext_resource type="PackedScene" uid="uid://gmja4o6gyaqu" path="res://scenes/background.tscn" id="1_f7kfh"]
+[ext_resource type="Texture2D" uid="uid://bv3qvnwvv3pt0" path="res://Images/5966507.png" id="1_qttpp"]
+[ext_resource type="PackedScene" uid="uid://bpb2wmtc7jiq3" path="res://scenes/scene_control.tscn" id="2_u4y1o"]
+[ext_resource type="Texture2D" uid="uid://cv0k6ags7pyrt" path="res://Images/26_-Fortitude-_symbols_sign_symbolism-512.webp" id="2_vwqua"]
+[ext_resource type="PackedScene" uid="uid://bbuhpgpvr4x5e" path="res://scenes/top_ui.tscn" id="3_h1gnv"]
+[ext_resource type="Script" path="res://scenes/JobZone1.gd" id="7_l76i6"]
+[ext_resource type="Texture2D" uid="uid://wqwlklouv1k3" path="res://Images/JobZoneImages/bright-sunshine-2560x1440-wallpaper-13548.jpg" id="8_d4v8d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igef5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdky0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lusq7"]
+size = Vector2(2791.5, 1208.25)
+
+[node name="jobs" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-7, 0)
+script = ExtResource("1_47g53")
+
+[node name="ManaUseButton" type="Button" parent="Node2D"]
+offset_left = 51.0
+offset_top = 388.0
+offset_right = 1021.0
+offset_bottom = 609.0
+theme_override_colors/font_color = Color(0.160784, 0.501961, 0.72549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igef5")
+text = "USE 6 MANA, GAINED 4 EXP & 2 GOLD"
+icon = ExtResource("1_qttpp")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="FortitudeUseButton" type="Button" parent="Node2D"]
+offset_left = 45.0
+offset_top = 653.0
+offset_right = 1022.0
+offset_bottom = 839.0
+theme_override_colors/font_color = Color(0.901961, 0.494118, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xdky0")
+text = "  USE 8 FORTITUDE, GAIN 3 EXP & 5 GOLD"
+icon = ExtResource("2_vwqua")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Background" parent="Node2D" instance=ExtResource("1_f7kfh")]
+layer = 0
+
+[node name="SceneControl" parent="Node2D" instance=ExtResource("2_u4y1o")]
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("3_h1gnv")]
+
+[node name="JobZone1button" type="Button" parent="Node2D"]
+offset_left = 413.0
+offset_top = 289.0
+offset_right = 611.0
+offset_bottom = 402.0
+text = "Zone 1"
+
+[node name="JobZone1" type="Node2D" parent="Node2D"]
+script = ExtResource("7_l76i6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/JobZone1"]
+position = Vector2(1404, 1067)
+scale = Vector2(1.0898, 0.840445)
+texture = ExtResource("8_d4v8d")
+
+[node name="Area2D" type="Area2D" parent="Node2D/JobZone1"]
+position = Vector2(299, 305)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/JobZone1/Area2D"]
+position = Vector2(1104, 764)
+shape = SubResource("RectangleShape2D_lusq7")
+
+[connection signal="pressed" from="Node2D/ManaUseButton" to="Node2D" method="_on_mana_use_button_pressed"]
+[connection signal="pressed" from="Node2D/FortitudeUseButton" to="Node2D" method="_on_fortitude_use_button_pressed"]
+[connection signal="pressed" from="Node2D/JobZone1button" to="Node2D" method="_on_job_zone_1_button_pressed"]
+[connection signal="visibility_changed" from="Node2D/JobZone1" to="Node2D" method="_on_job_zone_1_visibility_changed"]
+[connection signal="input_event" from="Node2D/JobZone1/Area2D" to="Node2D/JobZone1" method="_on_area_2d_input_event"]

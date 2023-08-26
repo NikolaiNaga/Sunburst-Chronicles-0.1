@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://cg7jwj2hblln6"]
+
+[ext_resource type="Script" path="res://Scripts/Boss.gd" id="1_jvwhw"]
+[ext_resource type="Texture2D" uid="uid://dvplgf880hhqe" path="res://Images/MyMonsterAvatar.png" id="2_yc7h0"]
+[ext_resource type="PackedScene" uid="uid://5dt6ff7rfdht" path="res://MainScenes/top_ui.tscn" id="3_k7a2l"]
+[ext_resource type="PackedScene" uid="uid://dnspltlf2sqmr" path="res://MainScenes/background.tscn" id="4_fl8rj"]
+[ext_resource type="PackedScene" uid="uid://bsvkgb66c8mo8" path="res://MainScenes/scenecontrol.tscn" id="5_4im8p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vd3jx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g37h1"]
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Boss" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_jvwhw")
+
+[node name="Boss" type="Button" parent="Node2D"]
+offset_left = 6.0
+offset_top = 551.0
+offset_right = 1078.0
+offset_bottom = 1608.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vd3jx")
+icon = ExtResource("2_yc7h0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="BossScene" type="Label" parent="Node2D"]
+offset_left = 923.0
+offset_top = 1592.0
+offset_right = 1058.0
+offset_bottom = 1678.0
+text = "Boss"
+label_settings = SubResource("LabelSettings_g37h1")
+
+[node name="BossDetails" type="RichTextLabel" parent="Node2D"]
+offset_left = 43.0
+offset_top = 275.0
+offset_right = 1027.0
+offset_bottom = 558.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 54
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+scroll_active = false
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("3_k7a2l")]
+
+[node name="Background" parent="Node2D" instance=ExtResource("4_fl8rj")]
+layer = 0
+
+[node name="Control" parent="Node2D" instance=ExtResource("5_4im8p")]
+
+[connection signal="pressed" from="Node2D/Boss" to="Node2D" method="_on_boss_pressed"]
