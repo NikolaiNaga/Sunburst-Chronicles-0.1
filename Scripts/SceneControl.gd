@@ -9,7 +9,7 @@ func _on_shop_pressed():
 	Global.WelcomeText.visible = false
 
 func _on_achievements_pressed():
-	get_tree().change_scene_to_file("res://scenes/achievements.tscn")
+	get_tree().change_scene_to_file("res://scenes/kingdom.tscn")
 	Global.WelcomeText.visible = false
 
 func _on_profile_pressed():

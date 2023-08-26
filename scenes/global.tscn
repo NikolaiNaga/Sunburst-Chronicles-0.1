@@ -71,6 +71,11 @@ theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
 scroll_active = false
 
+[node name="GoldMineTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="pressed" from="SkillPointsButton" to="." method="_on_skill_points_button_pressed"]
 [connection signal="timeout" from="FortitudeTimer" to="." method="_on_fortitude_timer_timeout"]
 [connection signal="timeout" from="ManaTimer" to="." method="_on_mana_timer_timeout"]
+[connection signal="timeout" from="GoldMineTimer" to="." method="_on_gold_mine_timer_timeout"]

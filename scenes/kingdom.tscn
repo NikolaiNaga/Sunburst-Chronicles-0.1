@@ -1,0 +1,207 @@
+[gd_scene load_steps=18 format=3 uid="uid://cq6srmvcncqh3"]
+
+[ext_resource type="PackedScene" uid="uid://gmja4o6gyaqu" path="res://scenes/background.tscn" id="1_pffdx"]
+[ext_resource type="PackedScene" uid="uid://bpb2wmtc7jiq3" path="res://scenes/scene_control.tscn" id="2_0npd0"]
+[ext_resource type="PackedScene" uid="uid://bbuhpgpvr4x5e" path="res://scenes/top_ui.tscn" id="3_hktlp"]
+[ext_resource type="Script" path="res://Scripts/kingdomscript.gd" id="4_yb0gk"]
+[ext_resource type="Texture2D" uid="uid://bvfhpbvoiuhka" path="res://Images/Kingdom/ForestPathPubliccrop.jpg" id="5_odaob"]
+[ext_resource type="Texture2D" uid="uid://gcch7i5sot1f" path="res://Images/Kingdom/png-clipart-gold-mine-gold-mining-coal-mining-mines-furniture-text-thumbnail-removebg-preview.png" id="6_gym86"]
+[ext_resource type="Texture2D" uid="uid://co4n1foqfnwi3" path="res://Images/Kingdom/Lab.png" id="7_u0qax"]
+[ext_resource type="Texture2D" uid="uid://c7qjysmvuiu67" path="res://Images/Kingdom/Castle.png" id="8_5a3ky"]
+[ext_resource type="StyleBox" uid="uid://md3lejxk40l2" path="res://Fonts/ButtonTexture.tres" id="9_4kb4j"]
+[ext_resource type="Script" path="res://Scripts/GoldMinePanelScript.gd" id="10_88no4"]
+[ext_resource type="Texture2D" uid="uid://cp4gb8wojvw6s" path="res://Images/Red_X.svg.png" id="10_hgcch"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8ajq"]
+bg_color = Color(0.447059, 0.447059, 0.447059, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.843137, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ek386"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk6pf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fj1n0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v873b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfc4g"]
+
+[node name="KINGDOM" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Background" parent="Node2D" instance=ExtResource("1_pffdx")]
+layer = 0
+
+[node name="SceneControl" parent="Node2D" instance=ExtResource("2_0npd0")]
+
+[node name="TopUI" parent="Node2D" instance=ExtResource("3_hktlp")]
+
+[node name="KingdomStart" type="Node2D" parent="Node2D"]
+z_index = 1
+position = Vector2(119, 50)
+script = ExtResource("4_yb0gk")
+
+[node name="KingdomMap" type="Sprite2D" parent="Node2D/KingdomStart"]
+position = Vector2(418, 1094)
+scale = Vector2(1.05376, 1.1377)
+texture = ExtResource("5_odaob")
+
+[node name="KingdomBuildingCount" type="RichTextLabel" parent="Node2D/KingdomStart"]
+offset_left = -113.0
+offset_top = 241.0
+offset_right = 960.0
+offset_bottom = 539.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+
+[node name="GoldMine" type="Button" parent="Node2D/KingdomStart"]
+visible = false
+offset_left = 31.0
+offset_top = 876.0
+offset_right = 294.0
+offset_bottom = 1143.0
+icon = ExtResource("6_gym86")
+flat = true
+expand_icon = true
+
+[node name="Lab" type="Button" parent="Node2D/KingdomStart"]
+visible = false
+offset_left = 205.0
+offset_top = 1360.0
+offset_right = 405.0
+offset_bottom = 1574.0
+icon = ExtResource("7_u0qax")
+flat = true
+expand_icon = true
+
+[node name="Castle" type="Button" parent="Node2D/KingdomStart"]
+visible = false
+offset_left = 454.0
+offset_top = 878.0
+offset_right = 702.0
+offset_bottom = 1122.0
+icon = ExtResource("8_5a3ky")
+flat = true
+expand_icon = true
+
+[node name="AddBuilding" type="Button" parent="Node2D/KingdomStart"]
+offset_left = -117.0
+offset_top = 429.0
+offset_right = 289.0
+offset_bottom = 555.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("9_4kb4j")
+theme_override_styles/hover = ExtResource("9_4kb4j")
+theme_override_styles/pressed = ExtResource("9_4kb4j")
+theme_override_styles/disabled = ExtResource("9_4kb4j")
+theme_override_styles/focus = ExtResource("9_4kb4j")
+text = "BUILDINGS"
+
+[node name="Control" type="Control" parent="Node2D"]
+layout_mode = 3
+anchor_top = 0.297
+anchor_bottom = 0.297
+offset_left = 3.0
+offset_top = 595.0
+offset_right = 1083.0
+offset_bottom = 1699.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BuildingOptions" type="PopupMenu" parent="Node2D/Control"]
+size = Vector2i(933, 657)
+content_scale_aspect = 1
+theme_override_font_sizes/font_size = 80
+item_count = 3
+item_0/text = "Gold Mine"
+item_0/icon = ExtResource("6_gym86")
+item_0/id = 0
+item_1/text = "Castle"
+item_1/icon = ExtResource("8_5a3ky")
+item_1/id = 1
+item_2/text = "Labatory"
+item_2/icon = ExtResource("7_u0qax")
+item_2/id = 2
+
+[node name="GoldMinePanel" type="Panel" parent="Node2D"]
+visible = false
+light_mask = 26
+z_index = 1
+offset_left = 61.0
+offset_top = 703.0
+offset_right = 1007.0
+offset_bottom = 1615.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h8ajq")
+script = ExtResource("10_88no4")
+
+[node name="Gold Mine" type="Sprite2D" parent="Node2D/GoldMinePanel"]
+position = Vector2(154, 152)
+scale = Vector2(0.813218, 0.762599)
+texture = ExtResource("6_gym86")
+
+[node name="GMtitel" type="RichTextLabel" parent="Node2D/GoldMinePanel"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 15.0
+offset_right = 881.0
+offset_bottom = 119.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[center][b]GOLD MINE"
+scroll_active = false
+
+[node name="GMdetails" type="RichTextLabel" parent="Node2D/GoldMinePanel"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 296.0
+offset_right = 881.0
+offset_bottom = 797.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+scroll_active = false
+
+[node name="GMclose" type="Button" parent="Node2D/GoldMinePanel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 800.0
+offset_right = 123.0
+offset_bottom = 884.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ek386")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gk6pf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fj1n0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v873b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tfc4g")
+icon = ExtResource("10_hgcch")
+expand_icon = true
+
+[node name="GMbuy" type="Button" parent="Node2D/GoldMinePanel"]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 767.0
+offset_right = 912.0
+offset_bottom = 885.0
+theme_override_font_sizes/font_size = 80
+text = "BUY"
+
+[connection signal="pressed" from="Node2D/KingdomStart/GoldMine" to="Node2D/KingdomStart" method="_on_gold_mine_pressed"]
+[connection signal="pressed" from="Node2D/KingdomStart/AddBuilding" to="Node2D/KingdomStart" method="_on_add_building_pressed"]
+[connection signal="index_pressed" from="Node2D/Control/BuildingOptions" to="Node2D/KingdomStart" method="_on_building_options_index_pressed"]
+[connection signal="pressed" from="Node2D/GoldMinePanel/GMclose" to="Node2D/KingdomStart" method="_on_g_mclose_pressed"]
+[connection signal="pressed" from="Node2D/GoldMinePanel/GMbuy" to="Node2D/GoldMinePanel" method="_on_g_mbuy_pressed"]

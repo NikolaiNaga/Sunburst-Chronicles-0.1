@@ -20,6 +20,11 @@ var fortitude: int = MAX_RESSOURCE_FORTITUDE
 # Items / Values
 var gold: int = 0
 
+var gold_mine_regen: int = 0
+var gold_mine_regen_total: int = 0
+var gold_mine_level: int = 0
+var gold_mine_cost: int = 1
+
 # Power & Skill Points
 var strength: int = 0
 var bulwark: int = 0
@@ -46,6 +51,9 @@ var level_damage_contribution: float = 0.0
 
 func get_damage_output():
 	return bulwark + strength + 1 + (current_level * level_damage_contribution)
+
+# Kingdom Building System
+var build_gm_timer: Timer = Timer.new()
 
 # Boss Setup
 var current_boss_level = 1
@@ -120,3 +128,7 @@ func showWelcomeText():
 	await get_tree().create_timer(20).timeout
 	WelcomeText.visible = false
 
+func _on_gold_mine_timer_timeout():
+	Global.gold += gold_mine_regen
+	gold_mine_regen_total += gold_mine_regen
+	

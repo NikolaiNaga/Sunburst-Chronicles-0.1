@@ -1,15 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpb2wmtc7jiq3"]
+[gd_scene load_steps=8 format=3 uid="uid://bpb2wmtc7jiq3"]
 
 [ext_resource type="Script" path="res://Scripts/SceneControl.gd" id="1_6tcrp"]
 [ext_resource type="Texture2D" uid="uid://d2b1mdkt7a452" path="res://Images/download-shopping-store-market-icon-png-11641399721chs8wj3v67.png" id="1_bijpw"]
 [ext_resource type="LabelSettings" uid="uid://dlh5ej3flambp" path="res://Fonts/SceneFonts.tres" id="2_ylah1"]
 [ext_resource type="Texture2D" uid="uid://dovb8qjj0xbxy" path="res://Images/2691221.png" id="3_kur60"]
 [ext_resource type="Texture2D" uid="uid://bkvv80tmyi4dq" path="res://Images/80-807700_compre-ahora-shop-now-icon.png" id="4_5ql5x"]
-[ext_resource type="Texture2D" uid="uid://bci5s7gcmvce3" path="res://Images/1312197.png" id="5_0wkcq"]
+[ext_resource type="Texture2D" uid="uid://b4tgmdsbst6fv" path="res://Images/Kingdom/Kingdom.png" id="6_hctl0"]
 [ext_resource type="Texture2D" uid="uid://cv0k6ags7pyrt" path="res://Images/26_-Fortitude-_symbols_sign_symbolism-512.webp" id="6_ybs4e"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_spgwd"]
-font_size = 36
 
 [node name="SceneControl" type="CanvasLayer"]
 
@@ -18,44 +15,44 @@ script = ExtResource("1_6tcrp")
 
 [node name="HomeButton" type="Button" parent="Node2D"]
 offset_left = 458.0
-offset_top = 1699.0
+offset_top = 1710.0
 offset_right = 642.0
-offset_bottom = 1854.0
+offset_bottom = 1865.0
 icon = ExtResource("1_bijpw")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="HomeLabel" type="Label" parent="Node2D"]
-offset_left = 467.0
-offset_top = 1845.0
-offset_right = 618.0
-offset_bottom = 1917.0
+offset_left = 476.0
+offset_top = 1853.0
+offset_right = 627.0
+offset_bottom = 1925.0
 text = "HOME"
 label_settings = ExtResource("2_ylah1")
 
 [node name="Boss" type="Button" parent="Node2D"]
-offset_left = 240.0
-offset_top = 1679.0
-offset_right = 426.0
-offset_bottom = 1879.0
+offset_left = 246.0
+offset_top = 1693.0
+offset_right = 432.0
+offset_bottom = 1893.0
 icon = ExtResource("3_kur60")
 flat = true
 expand_icon = true
 
 [node name="BossLabel" type="Label" parent="Node2D"]
-offset_left = 273.0
-offset_top = 1846.0
-offset_right = 399.0
-offset_bottom = 1918.0
+offset_left = 276.0
+offset_top = 1854.0
+offset_right = 402.0
+offset_bottom = 1926.0
 text = "BOSS"
 label_settings = ExtResource("2_ylah1")
 
 [node name="Shop" type="Button" parent="Node2D"]
-offset_left = 876.0
-offset_top = 1701.0
-offset_right = 1067.0
-offset_bottom = 1852.0
+offset_left = 874.0
+offset_top = 1707.0
+offset_right = 1065.0
+offset_bottom = 1858.0
 icon = ExtResource("4_5ql5x")
 flat = true
 expand_icon = true
@@ -68,43 +65,45 @@ offset_bottom = 1921.0
 text = "Shop"
 label_settings = ExtResource("2_ylah1")
 
-[node name="Achievements" type="Button" parent="Node2D"]
+[node name="Kingdom" type="Button" parent="Node2D"]
 offset_left = 7.0
 offset_top = 1690.0
 offset_right = 227.0
 offset_bottom = 1862.0
-icon = ExtResource("5_0wkcq")
+icon = ExtResource("6_hctl0")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="AchievmentsLabel" type="Label" parent="Node2D"]
-offset_left = 6.0
-offset_top = 1860.0
-offset_right = 234.0
-offset_bottom = 1913.0
-text = "Achievement"
-label_settings = SubResource("LabelSettings_spgwd")
+[node name="KingdomLabel" type="Label" parent="Node2D"]
+offset_left = 12.0
+offset_top = 1849.0
+offset_right = 240.0
+offset_bottom = 1921.0
+text = "Kingdom"
+label_settings = ExtResource("2_ylah1")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Profile" type="Button" parent="Node2D"]
-offset_left = 685.0
-offset_top = 1690.0
-offset_right = 860.0
-offset_bottom = 1861.0
+offset_left = 686.0
+offset_top = 1694.0
+offset_right = 861.0
+offset_bottom = 1865.0
 icon = ExtResource("6_ybs4e")
 flat = true
 expand_icon = true
 
 [node name="ProfileLabel" type="Label" parent="Node2D"]
-offset_left = 693.0
-offset_top = 1844.0
-offset_right = 852.0
-offset_bottom = 1916.0
+offset_left = 691.0
+offset_top = 1852.0
+offset_right = 850.0
+offset_bottom = 1924.0
 text = "Profile"
 label_settings = ExtResource("2_ylah1")
 
 [connection signal="pressed" from="Node2D/HomeButton" to="Node2D" method="_on_home_button_pressed"]
 [connection signal="pressed" from="Node2D/Boss" to="Node2D" method="_on_boss_pressed"]
 [connection signal="pressed" from="Node2D/Shop" to="Node2D" method="_on_shop_pressed"]
-[connection signal="pressed" from="Node2D/Achievements" to="Node2D" method="_on_achievements_pressed"]
+[connection signal="pressed" from="Node2D/Kingdom" to="Node2D" method="_on_achievements_pressed"]
 [connection signal="pressed" from="Node2D/Profile" to="Node2D" method="_on_profile_pressed"]
